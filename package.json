@@ -1,7 +1,7 @@
 {
-  "name": "articleweb",
+  "name": "demo",
   "version": "1.0.0",
-  "description": "My impressive Nuxt.js project",
+  "description": "My outstanding Nuxt.js project",
   "author": "wt",
   "private": true,
   "scripts": {
@@ -11,13 +11,20 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "axios": "^0.18.0",
+    "chinese-to-pinyin": "^0.1.8",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
+    "js-md5": "^0.7.3",
     "koa": "^2.6.2",
-    "element-ui": "^2.4.11",
-    "@nuxtjs/axios": "^5.3.6"
+    "koa-router": "^7.4.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "nuxt": "^2.4.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "sass-loader": "^7.1.0"
   }
 }

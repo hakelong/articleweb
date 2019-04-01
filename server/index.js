@@ -1,8 +1,20 @@
 const Koa = require('koa')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
+const koaRouter = require('koa-router');
 
+const router = koaRouter();
 const app = new Koa()
+
+app.use(router['routes']());
+router.get('/index', function (ctx, next) {
+	ctx.body = 'Hello Koa2.0!';
+});
+router.post('/index', function (ctx, next) {
+	ctx.body = 'Hello Koa2.0!';
+});
+
+
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')

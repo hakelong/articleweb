@@ -1,22 +1,29 @@
 <template>
-  <div>
-    <nuxt />
+  <div class="appVue">
+    <nuxt keep-alive/>
   </div>
 </template>
+<script>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+export default {
 }
+</script>
 
+<style lang='scss'>
+@import "~/assets/css/_function.scss";
+@import "~/assets/css/_module.scss";
+@import "~/assets/css/_reset.scss";
+
+.appVue {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#__layout,#__nuxt{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
 *,
 *:before,
 *:after {

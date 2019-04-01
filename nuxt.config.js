@@ -3,7 +3,10 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
+  router:{
+    base: '/epwm/',
+    middleware:'auth'
+  },
   /*
   ** Headers of the page
   */
@@ -16,7 +19,11 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+      { src: 'https://res.suning.cn/javascript/sn_da/sa_simple.js' },
+      { src: 'https://res.suning.cn/javascript/sn_da/sa_click.js' }
+    ],
   },
 
   /*
@@ -28,16 +35,19 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '~/plugins/vtap',
+    {src:'~/plugins/pageLoadingBox',ssr:false},
+    {src:'~/plugins/toastAlertBox',ssr:false},
+    '~/plugins/eventBus.js',
+    '~/plugins/topBar.js',
+    {src:'~/plugins/common.js',ssr:false}
   ],
-
   /*
   ** Nuxt.js modules
   */
@@ -56,12 +66,14 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    transpile: [/^element-ui/],
-    
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend(config, { isDev, isClient }) {
+      // const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader');
+
+      // vueLoader.options.loaders.sass = 'vue-style-loader!css-loader!sass-loader';
+
     }
   }
 }
